@@ -19,12 +19,17 @@ var onFormSubmit = function onFormSubmit(e) {
         e.target.elements.option.value = '';
     }
 
-    renderFormSubmit();
+    render();
+};
+
+var removeAll = function removeAll() {
+    app.options = [];
+    render();
 };
 
 var appRoot = document.getElementById('app');
 
-var renderFormSubmit = function renderFormSubmit() {
+var render = function render() {
     var template = React.createElement(
         'div',
         null,
@@ -49,6 +54,25 @@ var renderFormSubmit = function renderFormSubmit() {
             app.options.length
         ),
         React.createElement(
+            'button',
+            { onClick: removeAll },
+            'Remove All'
+        ),
+        React.createElement(
+            'ol',
+            null,
+            React.createElement(
+                'li',
+                null,
+                'Item one'
+            ),
+            React.createElement(
+                'li',
+                null,
+                'Item two'
+            )
+        ),
+        React.createElement(
             'form',
             { onSubmit: onFormSubmit },
             React.createElement('input', { type: 'text', name: 'option' }),
@@ -63,4 +87,4 @@ var renderFormSubmit = function renderFormSubmit() {
     ReactDOM.render(template, appRoot);
 };
 
-renderFormSubmit();
+render();
