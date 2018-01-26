@@ -1,5 +1,3 @@
-'use strict';
-
 // my janky version
 /*
 const app = {
@@ -36,39 +34,29 @@ render();
 
 */
 
-var visiablilty = false;
+let visiablilty = false;
 
-var toggleVisibility = function toggleVisibility() {
+const toggleVisibility = () => {
     visiablilty = !visiablilty;
 
     render();
-};
-var render = function render() {
-    var jsx = React.createElement(
-        'div',
-        null,
-        React.createElement(
-            'h1',
-            null,
-            'Visability Toggle'
-        ),
-        React.createElement(
-            'button',
-            { onClick: toggleVisibility },
-            visiablilty ? 'Hide details' : 'Show details'
-        ),
-        visiablilty && React.createElement(
-            'div',
-            null,
-            React.createElement(
-                'p',
-                null,
-                'Hey, there are some details'
-            )
-        )
+}
+const render = () => {
+    const jsx = (
+        <div>
+            <h1>Visability Toggle</h1>
+            <button onClick={toggleVisibility}>
+                {visiablilty ? 'Hide details' : 'Show details'}
+            </button>
+            {visiablilty && (
+                <div>
+                    <p>Hey, there are some details</p>
+                </div>
+            )}
+        </div>
     );
 
     ReactDOM.render(jsx, document.getElementById('app'));
-};
+}
 
 render();
