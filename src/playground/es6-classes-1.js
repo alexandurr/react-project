@@ -3,7 +3,7 @@ class Person {
         this.name = name;
         this.age = age;
     }
-    getGretting() {
+    getGreeting() {
         return `Hi I am ${ this.name }!`;
     }
 
@@ -36,20 +36,18 @@ class Traveler extends Person {
         super(name, age);
         this.homeLocation = homeLocation;
     }
-    // hasLocation() {
-    //     return !!this.homeLocation;
-    // }
-    // getGretting() {
-    //     let gretting = super.getGretting();
+    getGreeting() {
+        let greeting = super.getGreeting();
 
-    //     if(this.hasLocation()) {
-    //         gretting += ` Im visiting from ${this.homeLocation}.`
-    //     }
-    // }
+        if(this.homeLocation) {
+            greeting += ` Im visiting from ${this.homeLocation}.`;
+        }
+        return greeting;
+    }
 }
 
 const me = new Traveler('Alex Willoughby', 33, 'Puerto Rico');
 const other = new Traveler();
 
-console.log(me);
-console.log(other);
+console.log(me.getGreeting());
+console.log(other.getGreeting());

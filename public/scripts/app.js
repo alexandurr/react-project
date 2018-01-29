@@ -22,8 +22,8 @@ var Person = function () {
     }
 
     _createClass(Person, [{
-        key: 'getGretting',
-        value: function getGretting() {
+        key: 'getGreeting',
+        value: function getGreeting() {
             return 'Hi I am ' + this.name + '!';
         }
     }, {
@@ -79,17 +79,18 @@ var Traveler = function (_Person2) {
         _this2.homeLocation = homeLocation;
         return _this2;
     }
-    // hasLocation() {
-    //     return !!this.homeLocation;
-    // }
-    // getGretting() {
-    //     let gretting = super.getGretting();
 
-    //     if(this.hasLocation()) {
-    //         gretting += ` Im visiting from ${this.homeLocation}.`
-    //     }
-    // }
+    _createClass(Traveler, [{
+        key: 'getGreeting',
+        value: function getGreeting() {
+            var greeting = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreeting', this).call(this);
 
+            if (this.homeLocation) {
+                greeting += ' Im visiting from ' + this.homeLocation + '.';
+            }
+            return greeting;
+        }
+    }]);
 
     return Traveler;
 }(Person);
@@ -97,5 +98,5 @@ var Traveler = function (_Person2) {
 var me = new Traveler('Alex Willoughby', 33, 'Puerto Rico');
 var other = new Traveler();
 
-console.log(me);
-console.log(other);
+console.log(me.getGreeting());
+console.log(other.getGreeting());
