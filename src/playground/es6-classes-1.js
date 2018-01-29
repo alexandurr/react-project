@@ -14,7 +14,7 @@ class Person {
 
 class Student extends Person {
     constructor(name, age, major) {
-        super();
+        super(name, age);
         this.major = major;
     }
     hasMajor() {
@@ -22,8 +22,7 @@ class Student extends Person {
     }
 
     getDescription() {
-        return 'testing';
-        let description = super.getDescription()
+        let description = super.getDescription();
         
         if(this.hasMajor()) {
             description += ` Their major is ${this.major}.`

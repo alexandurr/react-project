@@ -42,7 +42,7 @@ var Student = function (_Person) {
     function Student(name, age, major) {
         _classCallCheck(this, Student);
 
-        var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this));
+        var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this, name, age));
 
         _this.major = major;
         return _this;
@@ -56,7 +56,6 @@ var Student = function (_Person) {
     }, {
         key: 'getDescription',
         value: function getDescription() {
-            return 'testing';
             var description = _get(Student.prototype.__proto__ || Object.getPrototypeOf(Student.prototype), 'getDescription', this).call(this);
 
             if (this.hasMajor()) {
