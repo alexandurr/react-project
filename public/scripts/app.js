@@ -68,8 +68,34 @@ var Student = function (_Person) {
     return Student;
 }(Person);
 
-var me = new Student('Alex Willoughby', 33, 'Web Design');
-var other = new Student();
+var Traveler = function (_Person2) {
+    _inherits(Traveler, _Person2);
 
-console.log(me.getDescription());
-console.log(other.getDescription());
+    function Traveler(name, age, homeLocation) {
+        _classCallCheck(this, Traveler);
+
+        var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age));
+
+        _this2.homeLocation = homeLocation;
+        return _this2;
+    }
+    // hasLocation() {
+    //     return !!this.homeLocation;
+    // }
+    // getGretting() {
+    //     let gretting = super.getGretting();
+
+    //     if(this.hasLocation()) {
+    //         gretting += ` Im visiting from ${this.homeLocation}.`
+    //     }
+    // }
+
+
+    return Traveler;
+}(Person);
+
+var me = new Traveler('Alex Willoughby', 33, 'Puerto Rico');
+var other = new Traveler();
+
+console.log(me);
+console.log(other);
