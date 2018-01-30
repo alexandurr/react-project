@@ -139,7 +139,7 @@ var Option = function (_React$Component5) {
                 React.createElement(
                     'p',
                     null,
-                    'Options component here'
+                    'Option component here'
                 )
             );
         }
