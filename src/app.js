@@ -52,7 +52,7 @@ class IndecisionApp extends React.Component {
         this.setState((prevState) => ({ options: prevState.options.concat([option]) }));
     }
     render() {
-        const subTitle = "Put your life in the hands of a computer!"
+        const subTitle = "Put your life in the hands of a computer"
 
         return (
             <div>
