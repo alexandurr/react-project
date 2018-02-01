@@ -1,12 +1,11 @@
 // import './utils.js';
 
-import { square, add } from './utils.js';
-import { canDrink, isAdult } from './person.js'
+// import subtract, { square, add} from './utils.js';
+// console.log(square(6));
+// console.log(add(6, 6));
+// console.log(subtract(30, 10));
 
-console.log('app.js is running!!');
-
-console.log(square(6));
-console.log(add(6, 6));
-
-console.log(isAdult(99));
+import isSenior, { canDrink, isAdult } from './person.js'
+console.log(isAdult(1));
 console.log(canDrink(33));
+console.log(isSenior(70));

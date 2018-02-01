@@ -1,17 +1,7 @@
-export {isAdult, canDrink};
+export { isAdult, canDrink };
 
-const isAdult = (x) => {
-    if (x >= 18) {
-        return true;
-    }else{
-        return false;
-    }
-};
+const isAdult = (age) =>  age >= 18;
 
-const canDrink = (y) => {
-    if (y >= 21) {
-        return true;
-    }else{
-        return false;
-    }
-};
+const canDrink = (age) => age >= 21;
+
+export default (age) => age >= 65;
