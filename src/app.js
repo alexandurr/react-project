@@ -1,11 +1,7 @@
-// import './utils.js';
+import React from 'react';
+import ReactDom from 'react-dom';
 
-// import subtract, { square, add} from './utils.js';
-// console.log(square(6));
-// console.log(add(6, 6));
-// console.log(subtract(30, 10));
+// const template = React.createElement('p', {}, 'testing 211');
+const template = <p>testing 1234</p>; 
 
-import isSenior, { canDrink, isAdult } from './person.js'
-console.log(isAdult(1));
-console.log(canDrink(33));
-console.log(isSenior(70));
+ReactDom.render(template, document.getElementById('app'));
