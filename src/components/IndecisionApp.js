@@ -4,7 +4,7 @@ import Header from './Header';
 import Action from './Action';
 import Options from './Options';
 
-class IndecisionApp extends React.Component {
+export default class IndecisionApp extends React.Component {
     constructor(props) {
         super(props);
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
@@ -79,5 +79,3 @@ class IndecisionApp extends React.Component {
         );
     }
 }
-
-export default IndecisionApp;
